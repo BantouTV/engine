@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.version     = Locomotive::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Didier Lafforgue']
-  s.email       = ['didier@nocoffee.fr']
+  s.email       = ['did@locomotivecms.com']
   s.homepage    = 'http://www.locomotivecms.com'
   s.summary     = 'A Next Generation Sexy CMS for Rails 3'
   s.description = 'Locomotive is a next generation CMS system with sexy admin tools, liquid templating, and inline editing powered by mongodb and rails 3.2'
@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rake',                            '~> 0.9.2'
 
-  s.add_dependency 'rails',                           '~> 3.2.5'
+  s.add_dependency 'rails',                           '~> 3.2.8'
 
   s.add_dependency 'devise-encryptable',              '~> 0.1.1'
   s.add_dependency 'devise',                          '~> 2.1.0'
@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'kaminari',                        '~> 0.13.0'
 
-  s.add_dependency 'haml',                            '~> 3.1.6'
+  s.add_dependency 'haml',                            '~> 3.1.7'
   s.add_dependency 'jquery-rails',                    '~> 1.0.19'
   s.add_dependency 'rails-backbone',                  '~> 0.6.1'
   s.add_dependency 'codemirror-rails',                '~> 2.21'
