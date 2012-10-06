@@ -5,28 +5,12 @@ module Locomotive
               :meta_keywords, :meta_description, :select_custom_fields,
               :file_custom_fields, :has_many_custom_fields, :many_to_many_custom_fields, :to => :source
 
-
-    # adapted from CustomFields::TargetHelpers.custom_fields_safe_attributes
-    def custom_fields_safe_attributes_for_content_type
-      self.source.content_type.entries_custom_fields.map do |rule|
-        case rule['type'].to_sym
-        when :date                    then "formatted_#{rule['name']}"
-        when :file                    then [rule['name'], "remove_#{rule['name']}"]
-        when :select, :belongs_to     then ["#{rule['name']}_id", "position_in_#{rule['name']}"]
-        when :has_many, :many_to_many then nil
-        else
-          rule['name']
-        end
-      end.compact.flatten
-    end
-    private :custom_fields_safe_attributes_for_content_type
-
     # Lists of all the attributes editable thru the html form for instance
     #
     # @returns [ List ] a list of attributes (string)
     #
     def safe_attributes
-      custom_fields_safe_attributes_for_content_type + %w(_slug seo_title meta_keywords meta_description _destroy)
+      self.source.custom_fields_safe_attributes + %w(_slug seo_title meta_keywords meta_description _destroy)
     end
 
     def filtered_custom_fields_methods
